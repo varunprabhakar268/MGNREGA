@@ -1,4 +1,4 @@
-from src import model, BdoService, GpmService, MemberService, schema
+from src import model, BdoService, GpmService, MemberService, Tables
 import sqlite3
 from sqlite3 import Error
 from getpass import getpass
@@ -13,7 +13,7 @@ def create_connection(db_file):
     conn = None
     try:
         conn = sqlite3.connect(db_file)
-        schema.create_tables(conn)
+        Tables.create_tables(conn)
         sql = "PRAGMA foreign_keys = ON"
         cur = conn.cursor()
         cur.execute(sql)

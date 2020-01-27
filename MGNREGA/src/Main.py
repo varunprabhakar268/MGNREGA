@@ -26,7 +26,7 @@ def create_connection(db_file):
 if __name__ == '__main__':
     ch = ''
     num = 0
-    database = "/home/nineleaps/MGNREGA"
+    database = "MnregaDb"
 
     conn = create_connection(database)
 

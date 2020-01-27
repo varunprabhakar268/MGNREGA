@@ -16,6 +16,8 @@ def gpm_login(conn, email):
             password = getpass('\tFirst time Login. Enter Password: ')
             update_password = "Update Gpms SET Password = '{}' WHERE GpmId = {}".format(password, record[2])
             cur.execute(update_password)
+            ids = [record[2], record[3]]
+            return ids
         else:
             password = getpass('\tEnter Password: ')
             if record[1] == password:

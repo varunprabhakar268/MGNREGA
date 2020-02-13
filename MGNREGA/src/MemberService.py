@@ -1,78 +1,76 @@
 from getpass import getpass
 
+from src import MemberRepository, Main
 
-def member_login(conn, email):
-    sql = "SELECT Email,Password,BdoId,GpmId,MemberId FROM Members WHERE Email = '{}'".format(email)
-    cur = conn.cursor()
-    cur.execute(sql)
-    record = cur.fetchone()
-    if record:
-        if record[1] is None:
-            password = getpass('\tFirst Time Login. Please set your password: ')
-            update_password = "Update Members SET Password = '{}' WHERE MemberId = {}".format(password, record[4])
-            cur.execute(update_password)
-            ids = [record[2], record[3], record[4]]
-            return ids
-        else:
-            password = getpass('\tEnter Password: ')
-            if record[1] == password:
-                print("Authentication Successful")
-                ids = [record[2], record[3], record[4]]
-                return ids
+
+class member:
+    def __init__(self):
+        self.bdo_id = None
+        self.gpm_id = None
+        self.member_id = None
+        self.query = MemberRepository.MemberQuery()
+
+    def member_login(self):
+        """
+        Member login.
+        :return:
+        """
+        try:
+            email = str(input("\tEnter Email Id: "))
+            record = self.query.login(email)
+            if record:
+                if record[1] is None:
+                    password = getpass('\tFirst Time Login. Please set your password: ')
+                    self.query.update_password(password, record[4])
+                    self.bdo_id = record[2]
+                    self.gpm_id = record[3]
+                    self.member_id = record[4]
+                    return True
+                else:
+                    password = getpass('\tEnter Password: ')
+                    if record[1] == password:
+                        print("\tAuthentication Successful")
+                        self.bdo_id = record[2]
+                        self.gpm_id = record[3]
+                        self.member_id = record[4]
+                        return True
+                    else:
+                        print("\tAuthentication failed. Please check your credentials")
+                        return False
             else:
-                print("Authentication failed. Please check your credentials")
-    else:
-        print("User does not exist")
+                print("\tUser does not exist")
+                return False
+        except:
+            print("Some Error occurred. Please try again.")
+            return False
 
+    def show_member_details(self):
+        """
+        View member details
+        :return:
+        """
+        try:
+            record = self.query.show_member_details(self.member_id)
+            print('''\tName: {}\tEmail: {}\tAge: {}\tGender: {}\tPlace: {}\tAddress: {}\tWage: {}
+                        '''.format(record[0], record[1], record[2], record[3], record[4], record[5], record[6]))
+            return True
+        except:
+            print("Some Error occurred. Please try again.")
+            return False
 
-def update_project_member_attendance(conn, project_member_id):
-    sql = ''' With temp (EndDate,StartDate) as 
-              (select EndDate,StartDate From Projects where 
-              ProjectId = (Select ProjectId from ProjectMembers where ProjectMemberId = {}) ) 
-              ,ProjectTenure (TotalDays,WorkingDays) as 
-              (SELECT (julianday(EndDate) - julianday(StartDate)) as TotalDays,
-              (julianday(EndDate) - julianday(CreatedAt)) as WorkingDays 
-              from temp,ProjectMembers Where ProjectMemberId = {})
-              Update ProjectMembers set
-              TotalWorkingDays = (select TotalDays from ProjectTenure),
-              Attendance = (select (WorkingDays*100/TotalDays) from ProjectTenure)
-              Where ProjectMemberId = {}
-          '''.format(project_member_id, project_member_id, project_member_id)
-    cur = conn.cursor()
-    cur.execute(sql)
-    conn.commit()
-
-
-def update_project_member_wage(conn, project_member_id):
-    sql = '''Update ProjectMembers Set 
-             Wage = TotalWorkingDays * 100
-             where ProjectMemberId = {}
-          '''.format(project_member_id)
-    cur = conn.cursor()
-    cur.execute(sql)
-    conn.commit()
-
-
-def show_member_details(conn, member_id):
-    sql = '''With MemberWage(Wage) as (select Sum(Wage)as TotalWage from ProjectMembers
-             Where MemberId = {} and WageApproval = 1)
-             select MemberName, Email, Age, Gender, Place, Address,Wage from Members,MemberWage
-             Where MemberId = {}'''.format(member_id, member_id)
-    cur = conn.cursor()
-    cur.execute(sql)
-    return cur.fetchone()
-
-
-def file_complaint(conn, bdo_id, gpm_id, member_id, issue):
-    sql = '''Insert into ComplaintLogs(BdoId,GpmId,MemberId,Issue)
-             Values({},{},{},'{}')'''.format(bdo_id, gpm_id, member_id, issue)
-    cur = conn.cursor()
-    cur.execute(sql)
-    return cur.lastrowid
-
-
-
-
-
-
-
+    def file_complaint(self):
+        """
+        File complaint regarding your issue to Gpm/Bdo.
+        :return:
+        """
+        try:
+            issue = input("\tEnter your Issue: ")
+            if self.query.file_complaint(self.bdo_id, self.gpm_id, self.member_id, issue):
+                print("Complaint Filed. Complaint Id: ")
+                return True
+            else:
+                print("Could not file complaint. Please try again.")
+                return False
+        except:
+            print("Some Error occurred. Please try again.")
+            return False

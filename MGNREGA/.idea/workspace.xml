@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15915af6-be98-44f2-ba63-5bc143654fef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.coverage" beforeDir="false" afterPath="$PROJECT_DIR$/.coverage" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MnregaDb" beforeDir="false" afterPath="$PROJECT_DIR$/MnregaDb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BdoService.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/BdoService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GpmService.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GpmService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemberService.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemberService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tables.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test_bdo_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test_bdo_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +50,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MGNREGA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,9 +72,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test_gpm_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MGNREGA" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/test_gpm_service.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Main" />
+        <item itemvalue="Python.test_gpm_service" />
       </list>
     </recent_temporary>
   </component>
@@ -98,10 +126,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580047766421">
+    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580736982197">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1580047766420" />
+    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1580736982197" />
+    <state x="410" y="201" width="597" height="390" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580194059839">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="410" y="201" width="597" height="390" key="#com.intellij.fileTypes.FileTypeChooser/67.27.1299.741@67.27.1299.741" timestamp="1580194059839" />
     <state x="399" y="124" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579863443884">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -110,22 +142,22 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1580119990425" />
-    <state width="1276" height="175" key="GridCell.Tab.0.bottom" timestamp="1580124825695">
+    <state width="1276" height="175" key="GridCell.Tab.0.bottom" timestamp="1581593193692">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1276" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1580124825695" />
-    <state width="1276" height="175" key="GridCell.Tab.0.center" timestamp="1580124825694">
+    <state width="1276" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1581593193692" />
+    <state width="1276" height="175" key="GridCell.Tab.0.center" timestamp="1581593193691">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1276" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1580124825694" />
-    <state width="1276" height="175" key="GridCell.Tab.0.left" timestamp="1580124825694">
+    <state width="1276" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1581593193691" />
+    <state width="1276" height="175" key="GridCell.Tab.0.left" timestamp="1581593193691">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1276" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1580124825694" />
-    <state width="1276" height="175" key="GridCell.Tab.0.right" timestamp="1580124825694">
+    <state width="1276" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1581593193691" />
+    <state width="1276" height="175" key="GridCell.Tab.0.right" timestamp="1581593193691">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1276" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1580124825694" />
+    <state width="1276" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1581593193691" />
     <state width="1276" height="219" key="GridCell.Tab.1.bottom" timestamp="1580121108983">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -142,17 +174,17 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state width="1276" height="219" key="GridCell.Tab.1.right/67.27.1299.741@67.27.1299.741" timestamp="1580121108983" />
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1580121686880">
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1581576025892">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1580121686880" />
+    <state x="372" y="224" key="com.intellij.ide.util.TipDialog/67.27.1299.741@67.27.1299.741" timestamp="1581576025892" />
     <state x="370" y="27" width="683" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580111520677">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="370" y="27" width="683" height="741" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/67.27.1299.741@67.27.1299.741" timestamp="1580111520677" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1579619697357">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1580808783519">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1579619697357" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1580808783519" />
   </component>
 </project>

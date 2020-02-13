@@ -12,7 +12,7 @@ class User:
         self.password = kwargs.get('password', None)
 
 
-class Bdo(User):
+class BdoModel(User):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -25,13 +25,13 @@ class Bdo(User):
         return cur.lastrowid
 
 
-class Gpm(User):
+class GpmModel(User):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.BdoId = kwargs.get('BdoId', None)
 
 
-class Project:
+class ProjectModel:
     def __init__(self, **kwargs):
         self.bdoId = kwargs.get('bdoId', None)
         self.type = kwargs.get('type', None)
@@ -43,7 +43,7 @@ class Project:
         self.end_date = kwargs.get('end_date', None)
 
 
-class Member(User):
+class MemberModel(User):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.bdo_id = kwargs.get('bdoId', None)
@@ -56,7 +56,7 @@ class Member(User):
         self.wage_approval = 0
 
 
-class ProjectMember(User):
+class ProjectMemberModel(User):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.bdo_id = kwargs.get('bdoId', None)

@@ -1,3 +1,5 @@
+
+
 def create_tables(conn):
     cur = conn.cursor()
 
@@ -27,7 +29,7 @@ def create_tables(conn):
     cur.execute(gpm_table)
     conn.commit()
 
-    members_table = '''CREATE TABLE Members (
+    members_table = '''CREATE TABLE if not exists Members (
     MemberId	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
     BdoId	INTEGER NOT NULL,
     GpmId	INTEGER NOT NULL,
@@ -45,7 +47,7 @@ def create_tables(conn):
     cur.execute(members_table)
     conn.commit()
 
-    projects_table = '''CREATE TABLE Projects (
+    projects_table = '''CREATE TABLE if not exists Projects (
     ProjectId	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
     BdoId	INTEGER NOT NULL,
     Type	TEXT NOT NULL,
@@ -60,7 +62,7 @@ def create_tables(conn):
     cur.execute(projects_table)
     conn.commit()
 
-    project_memebers_table = '''CREATE TABLE ProjectMembers (
+    project_memebers_table = '''CREATE TABLE if not exists ProjectMembers (
     `ProjectMemberId`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
     `BdoId`	INTEGER NOT NULL,
     `GpmId`	INTEGER NOT NULL,
@@ -82,7 +84,7 @@ def create_tables(conn):
     cur.execute(project_memebers_table)
     conn.commit()
 
-    complaint_logs_table = '''CREATE TABLE ComplaintLogs (
+    complaint_logs_table = '''CREATE TABLE if not exists ComplaintLogs (
     `ComplaintId`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
     `BdoId`	INTEGER NOT NULL,
     `GpmId`	INTEGER NOT NULL,
